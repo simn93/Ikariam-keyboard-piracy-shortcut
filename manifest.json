@@ -1,0 +1,66 @@
+{
+  "manifest_version": 2,
+
+  "name": "Ikariam Piracy",
+  "description": "Facilita i depredi",
+  "version": "1.0",
+  "icons": { "16": "icon16.png",
+			 "48": "icon48.png",
+			 "128": "icon128.png"
+			},
+  
+  "background": {
+    "scripts": ["background.js"]
+  },
+  
+  "browser_action": {
+    "default_icon": "icon48.png",
+    "default_title": "Ikariam simple click",
+	"default_popup": "popup.html"
+  },
+  
+   "content_scripts": [ 
+		{
+			"matches" : ["http://*/*", "https://*/*"],
+			"js" : ["jquery.min.js"] 
+		}
+	],
+	
+	"commands": {
+        "on_key_depreda": {
+            "suggested_key": {
+				"default": "Alt+S"
+			},
+            "description": "Depreda!"
+		},
+		"on_key_logout": {
+            "suggested_key": {
+				"default": "Alt+W"
+			},
+            "description": "Esci!"
+		},
+		"on_key_login": {
+			"suggested_key": {
+				"default" : "Alt+X"
+			},
+			"description" : "Logga!"
+		},
+		"on_key_chapta": {
+			"suggested_key": {
+				"default" : "Alt+A"
+			},
+			"description" : "Controlla!"
+		}
+	},
+
+  "permissions": [
+    "activeTab",
+	"notifications",
+    "storage",
+	"background",
+	"http://*/*", 
+    "https://*/*",
+	"alarms",
+	"cookies"
+  ]  
+}
